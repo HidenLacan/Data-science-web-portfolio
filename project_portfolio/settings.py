@@ -127,3 +127,10 @@ if not DEBUG:
     STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'luisernestoperezbello@gmail.com'  # Reemplaza con tu dirección de correo electrónico de Gmail
+EMAIL_HOST_PASSWORD = 'vhmt zvoe yscs nusa '   # Si generaste una "Contraseña de aplicación", úsala aquí. De lo contrario, usa tu contraseña normal de Gmail.
