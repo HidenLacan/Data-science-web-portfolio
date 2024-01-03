@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Background Example</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Raleway:wght@100&family=Roboto&display=swap" rel="stylesheet">
+    
+
+    
+
+    {% load static %}
+    <style>
+        .overlay-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 20; /* Adjusted for overlay content */
+            text-align: center;
+            color: white; /* For better visibility against the video */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="relative flex items-center justify-center h-screen overflow-hidden">
+        <nav class="absolute inset-x-0 top-0 z-50 flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+            <div class="flex lg:flex-1">
+                <!-- Place for your logo or brand name -->
+            </div>
+            <div class="flex lg:hidden">
+                <button id="mobile-menu-button" type="button" class="lg:hidden rounded-md p-2.5 text-white">
+                    <span class="sr-only">Open main menu</span>
+                    <svg id="menu-icon" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    <svg id="close-icon" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden lg:flex flex-col lg:flex-row lg:items-center lg:w-auto w-full">
+                <a href="/" class="lg:inline-block mt-4 lg:mt-0 lg:ml-10 text-sm font-semibold leading-6 text-white">Home</a>
+                <a href="/about/" class="lg:inline-block mt-4 lg:mt-0 lg:ml-10 text-sm font-semibold leading-6 text-white">About Me</a>
+                <a href="/projects/" class="lg:inline-block mt-4 lg:mt-0 lg:ml-10 text-sm font-semibold leading-6 text-white">Projects</a>
+                <a href="/resume/" class="lg:inline-block mt-4 lg:mt-0 lg:ml-10 text-sm font-semibold leading-6 text-white">Resume</a>
+            </div>
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                <!-- Place for additional navigation or call to action -->
+            </div>
+        </nav>
+
+        {% block content %}{% endblock %}
+        
+        
+    </div>
+    
+    <script>
+        // Toggle mobile menu
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            var menuIcon = document.getElementById('menu-icon');
+            var closeIcon = document.getElementById('close-icon');
+
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            }
+        });
+    </script>
+
+    
+
+</body>
+
+</html>
