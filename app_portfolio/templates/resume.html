@@ -15,26 +15,26 @@
       <div class="flex flex-col items-center justify-center">
         <h2 class="text-7xl  text-white font-light leading-snug text-center">Get in Touch</h2>
         
-        <h1 class="text-white m-2 p-2 ">Let me know your thoughts to collaborate making differents projects</h1>
+        <h1 class="text-white m-2 p-2 font-roboto ">Let me know your thoughts to collaborate making differents projects</h1>
         <form class="w-full max-w-lg" method="post">
           {% csrf_token %}
           <div class="mb-4">
-            <input type="text" name="{{ form.name.name }}" id="{{ form.name.id_for_label }}" placeholder="Name" class="block w-full p-3 text-sm text-black bg-white bg-opacity-75 border-b border-gray-300 focus:outline-none focus:border-gray-500" value="{{ form.name.value|default_if_none:'' }}" required />
+            <input type="text" name="{{ form.name.name }}" id="{{ form.name.id_for_label }}" placeholder="Name" class="font-roboto block w-full p-3 text-sm text-black bg-white bg-opacity-75 border-b border-gray-300 focus:outline-none focus:border-gray-500" value="{{ form.name.value|default_if_none:'' }}" required />
           </div>
       
           <div class="mb-4">
-            <input type="email" name="{{ form.email.name }}" id="{{ form.email.id_for_label }}" placeholder="E-mail" class="block w-full p-3 text-sm text-gray-700 bg-white bg-opacity-75 border-b border-gray-300 focus:outline-none focus:border-gray-500" value="{{ form.email.value|default_if_none:'' }}" required />
+            <input type="email" name="{{ form.email.name }}" id="{{ form.email.id_for_label }}" placeholder="E-mail" class="font-roboto block w-full p-3 text-sm text-gray-700 bg-white bg-opacity-75 border-b border-gray-300 focus:outline-none focus:border-gray-500" value="{{ form.email.value|default_if_none:'' }}" required />
           </div>
       
           <div class="mb-4">
-            <input type="text" name="{{ form.subject.name }}" id="{{ form.subject.id_for_label }}" placeholder="Subject" class="block w-full p-3 text-sm text-gray-700 bg-white bg-opacity-75    border-b border-gray-300 focus:outline-none focus:border-gray-500" value="{{ form.subject.value|default_if_none:'' }}" required />
+            <input type="text" name="{{ form.subject.name }}" id="{{ form.subject.id_for_label }}" placeholder="Subject" class="font-roboto block w-full p-3 text-sm text-gray-700 bg-white bg-opacity-75    border-b border-gray-300 focus:outline-none focus:border-gray-500" value="{{ form.subject.value|default_if_none:'' }}" required />
           </div>
       
           <div class="mb-6">
-            <textarea name="{{ form.message.name }}" id="{{ form.message.id_for_label }}" placeholder="Message" rows="5" class="block w-full p-3 text-sm text-gray-700 bg-white bg-opacity-75 border-b  focus:outline-none focus:border-white">{{ form.message.value|default_if_none:'' }}</textarea>
+            <textarea name="{{ form.message.name }}" id="{{ form.message.id_for_label }}" placeholder="Message" rows="5" class="font-roboto block w-full p-3 text-sm text-gray-700 bg-white bg-opacity-75 border-b  focus:outline-none focus:border-white">{{ form.message.value|default_if_none:'' }}</textarea>
           </div>
       
-          <button type="submit" class="py-3 px-6 bg-transparent text-white  border border-white- hover:bg-gray-500 hover:text-white focus:outline-none transition duration-150 ease-in-out">Submit</button>
+          <button type="submit" class="py-3 px-6 bg-transparent font-roboto text-white  border border-white- hover:bg-gray-500 hover:text-white focus:outline-none transition duration-150 ease-in-out">Submit</button>
         </form>
       </div>
     </div>
