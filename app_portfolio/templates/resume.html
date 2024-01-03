@@ -13,11 +13,13 @@
   <div class=" w-full mt-20 lg:mt-0">
     <div class="container mx-auto px-4 py-10">
       <div class="flex flex-col items-center justify-center">
-        <h2 class="text-2xl text-white mb-6">Get in Touch</h2>
+        <h2 class="text-7xl  text-white font-light leading-snug text-center">Get in Touch</h2>
+        
+        <h1 class="text-white m-2 p-2 ">Let me know your thoughts to collaborate making differents projects</h1>
         <form class="w-full max-w-lg" method="post">
           {% csrf_token %}
           <div class="mb-4">
-            <input type="text" name="{{ form.name.name }}" id="{{ form.name.id_for_label }}" placeholder="Name" class="block w-full p-3 text-sm text-gray-700 bg-white bg-opacity-75 border-b border-gray-300 focus:outline-none focus:border-gray-500" value="{{ form.name.value|default_if_none:'' }}" required />
+            <input type="text" name="{{ form.name.name }}" id="{{ form.name.id_for_label }}" placeholder="Name" class="block w-full p-3 text-sm text-black bg-white bg-opacity-75 border-b border-gray-300 focus:outline-none focus:border-gray-500" value="{{ form.name.value|default_if_none:'' }}" required />
           </div>
       
           <div class="mb-4">
