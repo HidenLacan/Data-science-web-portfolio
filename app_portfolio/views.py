@@ -3,6 +3,8 @@ from django.views import View
 # Create your views here.
 from django.core.mail import send_mail
 from .forms import ContactForm
+
+from .models import Project
 class Home(View):
     def get(self,request):
         
@@ -16,8 +18,8 @@ class About(View):
     
 class Projects(View):
     def get(self,request):
-        
-        return render(request,'projects.html')
+        gallery_items = Project.objects.all()
+        return render(request,'projects.html',{'gallery_items':gallery_items})
 
 class Resume(View):
     def get(self,request):

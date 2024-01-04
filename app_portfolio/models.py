@@ -8,3 +8,12 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name
+
+class Project(models.Model):
+    image_url = models.CharField(max_length=200)
+    subtitle = models.CharField(max_length=200)
+    title = models.CharField(max_length=200)
+    description = models.CharField(max_length=300)
+    url_project = models.CharField(max_length=300)
+    
+    
